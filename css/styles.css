@@ -1,6 +1,6 @@
 
 #title {
-  color: #fff;
+  color: #EEE0CB;
   text-align: left;
 }
 
@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-h2, h3, h6 {
+h2, h3, h6, h4, h5 {
   text-align: left;
 }
 
@@ -18,18 +18,20 @@ img {
 
 .colored-section {
   background-color: #00a73c;
-  color: #fff;
+  color: #EEE0CB;
 }
 
 .white-section {
-  background-color: #fff;
+  background-color: #EEE0CB;
 }
 
 .big-heading {
   font-size: 3.5rem;
   line-height: 1.5;
   padding-top: 4.5rem;
+  color: #DB162F;
 }
+
 
 .container-fluid {
   padding: 7% 15%;
@@ -66,10 +68,9 @@ body {
 
 /* Title Image */
 .title-image {
-  width: 60%;
-  transform: rotate(25deg);
+  width: 200%;
   position: absolute;
-  right: 30%;
+  left: 20%;
 }
 
 #comp {
@@ -78,4 +79,22 @@ body {
 
 p {
   color: #8f8f8f;
+}
+
+/* Map */
+#map1, #map2, #map3 {
+  height: 300px;
+  width: 100%;
+}
+
+#comp_name {
+  color: #EEE0CB;
+}
+
+#comp_info_grid {
+  color: #5F758E;
+}
+
+#contact-cards {
+  text-align: left;
 }

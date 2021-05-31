@@ -19,6 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -29,7 +30,7 @@
 
       <!-- Nav Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">ブレスト株式会社</a>
+        <a class="navbar-brand" href="index.html" id="comp_name">ブレスト株式会社</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,24 +62,29 @@
     <div class="container-fluid">
       <h2 class="section-heading">お問い合わせ</h2>
       <h6>お気軽にお問い合わせください。</h6>
-
+      <br><br><br>
       <div class="row">
         <div class="pricing-column col-lg">
           <div class="card">
             <div class="card-header">
               <h3>一般</h3>
             </div>
-            <div class="card-body">
-              <form>
+            <div class="card-body" id="contact-cards">
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='sent.html';}"></iframe> 
+              <form onsubmit="return validateForm()" target="hidden_iframe" action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSdwe_vDS149SQ1HEXOcl3ri7j9jQJ_TabAr9RHpnXQkl_DS-w/formResponse" method="post">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">メールアドレス</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="入力">
+                  <label for="name">お名前</label>
+                  <input type="text" id="name" placeholder="入力" class="form-control" required name="entry.1490330516">
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">本文</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="入力"></textarea>
+                  <label for="email">メールアドレス</label>
+                  <input type="text" id="email" placeholder="入力" class="form-control" required name="entry.161950963">
                 </div>
-                <a class="btn btn-success" href="sent.html" role="button">送信</a>
+                <div class="form-group">
+                  <label for="message">本文</label>
+                  <textarea class="form-control" id="message" rows="3" placeholder="入力" required name="entry.1616245084"></textarea>
+                </div>
+                <button class="btn btn-success" type="submit">送信</button>
               </form>
             </div>
           </div>
@@ -90,6 +96,7 @@
             </div>
             <div class="card-body">
               <h4>エースプランナー</h4>
+              <br>
               <h6>代表取締役：高宮和真</h6>
               <h6>電話番号：0742-94-3939</h6>
               <h6>メールアドレス：<a href = "mailto: takamiya@tintai-ace.com">takamiya@tintai-ace.com</a></h6>
@@ -113,7 +120,8 @@
 
   </footer>
 
-
+  <!-- Contact Script -->
+  <script src="form_submit.js"></script>
 </body>
 
 </html>
